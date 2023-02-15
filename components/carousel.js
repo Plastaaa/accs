@@ -95,8 +95,8 @@ export default class SimpleSlider extends Component {
         <div className="block md:hidden md:px-8 lg:px-24 xl:px-48">
           <Splide options={{type: "loop", autoplay: true, }} className={"border border-gray-400 rounded-2xl shadow-xl"}>
             {
-              this.state.slideM.map(slideM => 
-                this.echoSlideDesktop(slideM)
+              this.state.slideM.map(slideMo => 
+                this.echoSlideDesktop(slideMo)
               )
             }
           </Splide>
