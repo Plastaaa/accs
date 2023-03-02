@@ -223,11 +223,13 @@ function Video(props){
 
 export default class VehiculeUnique extends React.Component {
     componentDidMount() {
-        axios.get(`https://nunesaccount.alwaysdata.net/APIDG8/getCCDetailById.php?id=${window.location.pathname.split('/')[2]}&concess=11`)
+        axios.get(`https://nunesaccount.alwaysdata.net/APIDG8/getCCDetailById.php?id=${window.location.pathname.split('/')[2]}`)
           .then(res => {
             const campingcar = res.data;
             this.setState({ campingcar });
-            axios.get(`https://nunesaccount.alwaysdata.net/APIDG8/getVideoByCCName.php?concess=0&nom=${cc.marque+" "+cc.modele+" "+cc.version}`)
+            var cc = res.data[0];
+
+            axios.get(`https://nunesaccount.alwaysdata.net/APIDG8/getVideoByCCName.php?nom=${cc.marque+" "+cc.modele+" "+cc.version}`)
                 .then(res2 => {
                     const video = res2.data[0].src;
                     this.setState({ video });
