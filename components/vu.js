@@ -223,7 +223,7 @@ function Video(props){
 
 export default class VehiculeUnique extends React.Component {
     componentDidMount() {
-        axios.get(`https://nunesaccount.alwaysdata.net/APIDG8/getCCDetailById.php?id=${window.location.pathname.split('/')[2]}`)
+        axios.get(`https://nunesaccount.alwaysdata.net/APIDG8/getCCDetailById.php?id=${window.location.pathname.split('/')[2]}&concess=11`)
           .then(res => {
             const campingcar = res.data;
             this.setState({ campingcar });
