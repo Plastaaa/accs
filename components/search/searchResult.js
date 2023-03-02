@@ -19,6 +19,7 @@ export default class SearchResult extends React.Component {
         const refURL = queryParams.get('ref');
         //const choixConcessURL = queryParams.get('concession');
         const pageURL = queryParams.get('page');
+        const triURL = queryParams.get('orderBy');
         axios.get(`https://nunesaccount.alwaysdata.net/APIDG8/getCCByParamDev.php`,{
             params:{
                 etat: etatURL,
@@ -35,6 +36,7 @@ export default class SearchResult extends React.Component {
                 ref: refURL,
                 concess: "Auto Camping-Car Service",
                 concesss: 11,
+                orderBy: triURL,
                 page: pageURL,
             }
         })
