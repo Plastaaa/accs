@@ -233,7 +233,6 @@ export default class VehiculeUnique extends React.Component {
                 .then(res2 => {
                     const video = res2.data[0].src;
                     this.setState({ video });
-                    //console.log(video[0].src)
                 }
             )
         })
